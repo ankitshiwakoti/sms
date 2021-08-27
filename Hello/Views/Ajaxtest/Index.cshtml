@@ -1,0 +1,133 @@
+﻿@{ 
+    Layout = "_Student";
+}
+
+
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+
+
+        <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card" style="overflow-y: auto; height: 400px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Notice  </h4>
+                        <table class="table">
+                            <thead>
+                                <tr style="position:sticky;">
+                                    <th>notice id</th>
+                                    <th>noticename</th>
+
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @foreach (var da in ViewBag.datas)
+                                    {
+                                        <td>@da.aid</td>
+                                        <td>@da.noticename</td>
+
+                                        <td>
+                                            <input type="submit" value="view" onclick="btnclick()" class="btn btn-primary submit-btn btn-block" />
+                                            &nbsp;
+                                            <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />
+                                        </td>
+
+                                    }
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+
+                        <form class="form-sample">
+                            <h4 class="card-title">personal information</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" id="notice"/>
+                                       
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label"  id="aid" />
+                                       
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" id="noticename"/>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label" id="publisher" />
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <script>
+            function btnclick() {
+               $.ajax({
+                    url:'@Url.Action("result", "Ajaxtest")',
+                    type: "GET",
+                    dataType: "text",
+                    success: function (response) {
+                        console.log(response);
+                       
+                        val = JSON.parse(response);
+
+                        console.log(val);
+                        $("#aid").text(val.aid);
+                        $("#notice").text(val.notice);
+                        $("#noticename").text(val.noticename);
+                        $("#publisher").text(val.publisher);
+
+
+                   },
+
+
+                    error: function () { alert("not working ");}
+                });
+            }
+        </script>
+
+        
+
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid clearfix">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                    Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>

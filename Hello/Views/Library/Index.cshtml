@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "_Staff";
+
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+
+
+
+
+        <!-- partial -->
+        <!-- this is form-->
+
+        <form method="post" asp-controller="Studentadd" asp-action="Index">
+
+            <a type="button" class="btn btn-info btn-fw" asp-controller="Bookadd" asp-action="Index" style="height:50px; width:20px;">
+                <i class="mdi mdi-account"></i>New Book
+            </a>
+        </form>
+        <h2>
+            Books details
+
+        </h2>
+
+
+
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th>ISBN</th>
+                                <th> Book Name </th>
+                                <th> Course </th>
+                                <th> Semester </th>
+                                <th> Description </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.datas)
+                            {
+                                <tr>
+                                    <td> @item.id </td>
+                                    <td> @item.isbn </td>
+                                    <td>
+                                        @item.bookname
+                                    </td>
+
+                                    <td> @item.course </td>
+                                    <td> @item.sem</td>
+                                    <td>@item.des</td>
+                                </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid clearfix">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="https://www.facebook.com/step2solution.02" target="_blank">Step2 Solution</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                    Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+</div>

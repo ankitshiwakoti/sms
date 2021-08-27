@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "_Administrator";
+
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+
+
+
+
+        <!-- partial -->
+        <!-- this is form-->
+
+        <form method="post" asp-controller="Administratoradd" asp-action="Index">
+
+            <a type="button" class="btn btn-info btn-fw" asp-controller="Administratoradd" asp-action="Index"  style="height:50px; width:20px;">
+                <i class="mdi mdi-account"></i>New Administrator
+            </a>
+        </form>
+        <h2>
+            Admin details
+
+        </h2>
+
+
+
+        <div class="col-lg-12 grid-margin stretch-card" style="overflow-y: auto; height: 600px;">
+            <div class="card">
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Email </th>
+                                <th> Fullname </th>
+                                <th> Address </th>
+
+                            </tr>
+
+                            @foreach(var items in ViewBag.dats)
+                            {
+                                <td>@items.aid</td>
+                                <td>@items.email</td>
+                                <td>@items.fullname</td>
+                                <td>@items.address</td>
+                                <td> <input type="submit" value="Update" class="btn btn-primary submit-btn btn-block" />&nbsp;
+                                    <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" /> </td>
+
+                                 }
+                        </thead>
+                        <tbody>
+
+                           
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid clearfix">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="https://www.facebook.com/step2solution.02" target="_blank">Step2 Solution</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                    Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+</div>

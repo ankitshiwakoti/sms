@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "_Staff";
+
+
+}
+
+<!-- partial -->
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+
+
+
+
+        <!-- partial -->
+        <!-- this is form-->
+
+
+
+        <h2>New Book Entry</h2>
+
+
+
+
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="form-sample" asp-controller="bookadd" asp-action="Insert">
+                        <h4 class="card-title">Book information</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label  class="col-sm-3 col-form-label">Book Name</label>
+                                    <div class="col-sm-9">
+                                        <input   name="bookname" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label  class="col-sm-3 col-form-label">ISBN</label>
+                                    <div class="col-sm-9">
+                                        <input name="isbn" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Course</label>
+                                    <div class="col-sm-9">
+                                        <select  name="course" class="form-control">
+                                            <option>BCA</option>
+                                            <option>BBA</option>
+                                            <option>BSW</option>
+                                            <option>MCA</option>
+                                            <option>BBS</option>
+                                            <option>BA</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label  class="col-sm-3 col-form-label">Semenster</label>
+                                    <div class="col-sm-9">
+                                        <select name="sem" class="form-control">
+                                            <option>BCA 1st</option>
+                                            <option>BCA 2st</option>
+                                            <option>BCA 3st</option>
+                                            <option>BCA 4st</option>
+                                            <option>BCA 5st</option>
+                                            <option>BCA st</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label  class="col-sm-3 col-form-label">Description</label>
+                                    <div class="col-sm-9">
+                                        <input name="des" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                        </div>
+                        
+                       
+
+
+
+                       
+
+                       
+                      
+
+                        
+
+
+                        
+                        <button type="submit" class="btn btn-success mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid clearfix">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="https://www.facebook.com/step2solution.02" target="_blank">Step2 Solution</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                    Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+    </div>

@@ -1,0 +1,326 @@
+﻿@{
+    Layout = "_Staff";
+
+
+}
+
+<!-- partial -->
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+
+
+
+
+        <!-- partial -->
+        <!-- this is form-->
+
+
+
+        <h2>New Staff Entry</h2>
+
+
+
+
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="form-sample" method="post" asp-controller="Staffadd" asp-action="Insert">
+                        <h4 class="card-title">personal information</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">First Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="firstname" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Last Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="lastname" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Blood Group</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="bloodgroup">
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                            <option>A+</option>
+                                            <option>A-</option>
+                                            <option>B+</option>
+                                            <option>B-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Date of Birth</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="dateofbirth" placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Phone no</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="phoneno" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Gender</label>
+                                    <div class="col-sm-4">
+                                        <div class="form-radio">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="gender" id="membershipRadios1" value="male" checked> Male
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-radio">
+                                            <label class="form-check-label">
+                                                <input type="radio" class="form-check-input" name="gender" id="membershipRadios2" value="female"> Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="card-title"> Student Address</h4>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Country</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="country">
+                                            <option>Nepal</option>
+                                            <option>India</option>
+                                            <option>Bangladesh</option>
+                                            <option>Bhutan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">State</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="state">
+                                            <option>provience 1</option>
+                                            <option>provience 2</option>
+                                            <option>Bagmati</option>
+                                            <option>Gandaki</option>
+                                            <option>Lumbini</option>
+                                            <option>Karnali</option>
+                                            <option>Sudurpashchim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Zone</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="zone">
+                                            <option>Mechi</option>
+                                            <option>Koshi</option>
+                                            <option>Bagmati</option>
+                                            <option>Gandaki</option>
+                                            <option>Lumbini</option>
+                                            <option>Karnali</option>
+                                            <option>Sudurpashchim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">District</label>
+                                    <div class="col-sm-9">
+                                        <select class="form-control" name="district">
+                                            <option>Jhapa</option>
+                                            <option>Ilam</option>
+                                            <option>Pachthar</option>
+                                            <option>Morang</option>
+                                            <option>Lumbini</option>
+                                            <option>Karnali</option>
+                                            <option>Sudurpashchim</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">city Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="cityname" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Street Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="streetname" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Postal Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="postalcode" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- added -->
+
+                        <h4 class="card-title">Account Information</h4>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Email Address</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="email" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">UserName</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="username" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Conform Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="password" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="card-title">School Details</h4>
+
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Joining Data</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="joiningdate" placeholder="dd/mm/yyyy" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Course</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="course" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">StaffCode</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="staffcode" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Shift</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="shift" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <input type="submit" value="Submit" class="btn btn-success mr-2" />
+                        <input class="btn btn-light" value="Cancel" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="container-fluid clearfix">
+                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="https://www.facebook.com/step2solution.02" target="_blank">Step2 Solution</a>. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                    Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                </span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+    </div>
