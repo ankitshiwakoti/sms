@@ -19,9 +19,9 @@
                 <div class="card card-signin my-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Sign In</h5>
-                        <form class="form-signin" asp-controller="Login" asp-action="Loginaction">
+                        <form method="post" class="form-signin" asp-controller="Login" asp-action="Loginaction">
                             <div class="form-label-group">
-                                <input type="text" id="inputEmail" class="form-control" name="username" placeholder="UserName" required autofocus >
+                                <input type="text" id="inputEmail" class="form-control" name="username" placeholder="UserName" required autofocus>
                                 <label for="inputEmail">Username</label>
                             </div>
 
@@ -36,8 +36,8 @@
                             </div>
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
                             <hr class="my-4">
-                           
-                            <button class="btn btn-lg btn-facebook btn-block text-uppercase"  type="submit">  
+
+                             <button class="btn btn-lg btn-facebook btn-block text-uppercase"  type="submit">  
 
                             <i class="fab fa-facebook-f mr-2"></i> Forget password</button>
                         </form>

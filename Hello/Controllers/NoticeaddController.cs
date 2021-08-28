@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace Hello.Controllers
 {
-    public class ComplainController : Controller
+    public class NoticeaddController : Controller
     {
         DataContext dal = new DataContext();
-        public IActionResult Complain()
+        public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult createcomplain( Complain datamodel)
+
+        public IActionResult createnotice(Notice noti)
         {
-            dal.Complains.Add(datamodel);
+            var data = dal.notices.Add(noti);
             dal.SaveChanges();
+            return RedirectToAction("Index", "Noticeadd");
 
-
-            return Redirect("Complain/Complain");
         }
     }
 }

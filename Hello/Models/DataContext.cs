@@ -22,16 +22,16 @@ namespace Hello.Models
 				["ConnectionStrings:DefaultConnection"]);
 		}
 
-			//need to register your model here 
-			//public Dbset<product> Products{get;set;}
+		//need to register your model here 
+		//public Dbset<product> Products{get;set;}
 
 		public DbSet<AdminRegister> AdminRegisters { get; set; }
 		public DbSet<library> libraries { get; set; }
 
 		public DbSet<userlogin> userlogins { get; set; }
-        public DbSet<Administratorregister> Administratorregisters { get; set; }
-       
-        public DbSet<Studentregister> Studentregisters { get; set; }
+		public DbSet<Administratorregister> Administratorregisters { get; set; }
+
+		public DbSet<Studentregister> Studentregisters { get; set; }
 
 		public DbSet<Teacherregister> Teacherregisters { get; set; }
 
@@ -39,11 +39,13 @@ namespace Hello.Models
 
 		public DbSet<Courseadd> Courseadds { get; set; }
 
-		public DbSet<Ajaxtest> Ajaxtests { get;  set; }
+		public DbSet<Ajaxtest> Ajaxtests { get; set; }
 
-		public DbSet<Complain> complains { get; set; }
+		public DbSet<Complain> Complains { get; set; }
+
+		public DbSet<Notice> notices { get; set; }
 
 
-    }
+	}
 	}
 

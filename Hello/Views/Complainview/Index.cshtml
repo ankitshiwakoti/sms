@@ -7,116 +7,112 @@
     <div class="content-wrapper">
 
 
+        <center>
+            <div class="row">
+                <div class="col-lg-10 grid-margin stretch-card" style="overflow-y: auto; height: 400px;">
+                    <div class="card">
 
-        <div class="row">
-            <div class="col-lg-6 grid-margin stretch-card" style="overflow-y: auto; height: 400px;">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Notice  </h4>
-                        <table class="table">
-                            <thead>
-                                <tr style="position:sticky;">
-                                    <th>Complain id</th>
-                                    <th>Complain subject</th>
+                        <div class="card-body">
+                            <h4 class="card-title">Notice  </h4>
+                            <table class="table">
+                                <thead>
+                                    <tr style="position:sticky;">
+                                        <th>Complain id</th>
+                                        <th>Complain subject</th>
 
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                @foreach (var da in ViewBag.datas)
-                                {
-                                <tr>
-                                    <td>@da.cid</td>
-                                    <td>@da.complainsub</td>
+                                    @foreach (var da in ViewBag.datas)
+                                    {
+                                        <tr>
+                                            <td>@da.cid</td>
+                                            <td>@da.complainsub</td>
 
-                                    <td>
-                                        <input type="submit" value="view" onclick="btnclick()" class="btn btn-primary submit-btn btn-block" />
-                                        &nbsp;
-                                        <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />
-                                    </td>
-                                </tr>
-                                        }
-                                    
+                                            <td>
+                                                <a asp-controller="Complaindata" asp-action="Index" asp-route-cid="@da.cid" class="btn btn-success">View</a>
+
+
+                                                @* <input type="submit" value="view" onclick="btnclick()" class="btn btn-primary submit-btn btn-block" />
+                                            &nbsp;
+                                            <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />*@
+                                            </td>
+                                        </tr>
+                                    }
+
 
                                 </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <div class="col-12 grid-margin">
-                <div class="card">
-                    <div class="card-body">
+        </center>
 
-                        <form class="form-sample">
-                            <h4 class="card-title">personal information</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" id="notice" />
+        <!--<script>
+     function btnclick() {
+         $.ajax({
+            url:'@Url.Action("result", "Complainview")',
+            type: "GET",
+             dataType: "text",
+             success: function (response) {
+                  console.log(response);
 
-                                    </div>
-                                </div>
+                  parsedata = JSON.parse(response);
 
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" id="aid" />
+                 console.log(parsedata);-->
+        @*$("#aid").text(val.aid);
+        $("#notice").text(val.notice);
+        $("#noticename").text(val.noticename);
+        $("#publisher").text(val.publisher);*@
+        @* $('#nid').val(parsedata.cid);
+        $('#nsub').val(parsedata.complainsub);
+        $('#cto').val(parsedata.complainto);
+        $('#complain').val(parsedata.complain);*@
 
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" id="noticename" />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" id="publisher" />
-
-                                    </div>
-                                </div>
-                            </div>
+        <!--$("#complain").text(parsedata.complain);
 
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+               },
 
 
-      <script>
-           function btnclick() {
-               $.ajax({
-                  url:'@Url.Action("result", "Ajaxtest")',
-                  type: "GET",
-                   dataType: "text",
-                   success: function (response) {
-                        console.log(response);
+                error: function () { alert("not working ");}
+            });
+        }
+    </script>-->
 
-                        val = JSON.parse(response);
+    <!--<script>
+            function btnclick() {
+                var id = $("#cid").val();-->
+               @* var obj = {
+                    Id=id
+                }*@
+                <!--senddata(id);
+            }
 
-                        console.log(val);
-                        $("#aid").text(val.aid);
-                        $("#notice").text(val.notice);
-                        $("#noticename").text(val.noticename);
-                        $("#publisher").text(val.publisher);
+            function senddata(id) {
+                $.ajax({
 
+                    url:"/Complainview/data",
+                   
+                    type:"POST",
+                    data:id,
+                    success: function (data) {
 
-                   },
-
-
+                        alert(data);-->
+                       @* console.log(data);
+                        data= JSON.parse(data);*@
+                   <!--},
                     error: function () { alert("not working ");}
                 });
             }
-        </script>
 
 
+    </script>-->
 
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->

@@ -12,9 +12,9 @@ namespace Hello.Models
     {
         [Key]
         public int uid { get; set; }
-        public string username  { get; set; }
-        public string password { get; set; }
-        public string role { get; set; }
+        public String username  { get; set; }
+        public String password { get; set; }
+        public String role { get; set; }
 
     }
 }

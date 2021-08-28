@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "_Administrator";
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="col-md-20 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Create Notice</h1>
+
+                    <form class="forms-sample" asp-controller="Noticeadd" asp-action="createnotice">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Notice Topic</label>
+                            <input type="text" class="form-control" name="ntopic" placeholder="Notice topic">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail3"> Notice </label>
+                            <input type="text" class="form-control" name="notice" placeholder="notice...">
+                        </div>
+
+
+
+                        @*<div class="form-group">
+                            <label for="exampleTextarea1">Complain</label>
+                            <textarea class="form-control" name="complain" rows="2" placeholder="write your complain here "></textarea>
+                        </div>*@
+
+                        <button type="submit" class="btn btn-success mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
