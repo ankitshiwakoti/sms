@@ -1,6 +1,17 @@
 ﻿@{
-    Layout = "_Staff";
+    Layout = "_Administrator";
 
+}
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+
+
+    });
+    </script>
 }
 
 <div class="main-panel">
@@ -30,17 +41,33 @@
             <div class="card">
                 <div class="card-body">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="datatable">
                         <thead>
                             <tr>
                                 <th> ID </th>
                                 <th> Email </th>
-                                <th> Username </th>
-                                <th> password </th>
+                                <th> Firstname </th>
+                                <th> staff code </th>
+                                <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach(var item in ViewBag.d)
+                             {
+                            <tr>
+
+                                <td>@item.stid</td>
+                                <td>@item.email</td>
+                                <td>@item.firstname</td>
+                                <td>@item.staffcode</td>
+                                <td>
+                                    <a asp-controller="Updatestaff" asp-action="Index" asp-route-stid="@item.stid" class="btn btn-success">Update</a>
+                                    <a asp-controller="Updatestaff" asp-action="delete" asp-route-stid="@item.stid" onclick="return confirm('Are you sure to delete admin with email: @item.email')" class="btn btn-danger">Delete</a>
+                                </td>
+
+                            </tr>
+                             }
                         </tbody>
                     </table>
                 </div>

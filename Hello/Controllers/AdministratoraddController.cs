@@ -29,14 +29,16 @@ namespace Hello.Controllers
                 {
                     username = viewmodel.username,
                     password = viewmodel.password,
-                    role = "Administrator"
+                    role = "administrator",
+                    course="null"
                 };
 
-                Administratorregister register = new Administratorregister()
+                Administratorregisters register = new Administratorregisters()
                 {
                     email = viewmodel.email,
                     fullname = viewmodel.fullname,
-                    address = viewmodel.address
+                    address = viewmodel.address,
+                    contactno=viewmodel.contactno
                 };
 
                 dal.userlogins.Add(login);

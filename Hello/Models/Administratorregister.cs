@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Hello.Models
 {
     [Table("administratorregister")]
-    public class Administratorregister
+    public class Administratorregisters
     {
         [Key]
         public int aid { get; set; }
@@ -17,6 +17,8 @@ namespace Hello.Models
         public String fullname  { get; set; }
 
         public String address { get; set; }
+
+        public String contactno { get; set; }
 
     }
 }

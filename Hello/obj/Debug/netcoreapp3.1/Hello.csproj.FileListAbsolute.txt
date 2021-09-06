@@ -93,3 +93,9 @@ C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Comp
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Complaindata\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Noticeadd\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Noticedata\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Table\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updateadmin\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updateadministrator\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updatestudent\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updatestaff\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Stdview\Index.cshtml.g.cs

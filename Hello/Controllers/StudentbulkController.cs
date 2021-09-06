@@ -100,7 +100,8 @@ namespace Hello.Controllers
                      {
                          username = data.username,
                          password = data.password,
-                          role = "student"
+                         course = data.course,
+                         role = "student"
                       };
 
 

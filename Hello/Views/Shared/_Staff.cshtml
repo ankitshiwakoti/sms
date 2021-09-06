@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.addons.css">
     <!-- endinject -->
+    <link href="~/lib/jquery-datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
@@ -207,7 +208,6 @@
                         <!--new added menu1 Staff -->
                         <!-- end menu1 Staff -->
                         <!--new added menu1 Parents -->
-                       
                         <!-- end menu1 Parents -->
                         <!--new added menu1 Library -->
                         <li class="nav-item">
@@ -218,8 +218,6 @@
                         </li>
                         <!-- end menu1 Library -->
                         <!--new added menu1 Classes -->
-                        
-
                         <!--end menu1 Classes -->
                         <!--new added menu1 Attandance -->
                         <li class="nav-item">
@@ -335,4 +333,6 @@
 
     </div>
 </body>
+<script src="~/lib/jquery-datatables/js/jquery.dataTables.min.js"></script>
 </html>
+@RenderSection("Scripts", required: false)

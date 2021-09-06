@@ -31,7 +31,8 @@ namespace Hello.Controllers
                 {
                     username=viewmodel.username,
                     password=viewmodel.password,
-                    role="teacher"
+                    role="teacher",
+                    course=viewmodel.course
 
                 };
 

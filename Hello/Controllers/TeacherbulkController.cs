@@ -58,22 +58,26 @@ namespace Hello.Controllers
                             course = worksheet.Cells[row, 18].Value.ToString().Trim(),
                             studentcode = worksheet.Cells[row, 19].Value.ToString().Trim(),
                             shift = worksheet.Cells[row, 20].Value.ToString().Trim()
-                        });
+                           
+                        }); ;
                     }
 
 
                 }
 
             }
+            
 
             foreach (Teachersignup data in list)
             {
+               
 
                 try
                 {
 
                     Teacherregister register = new Teacherregister()
                     {
+                       
 
                         firstname = data.firstname,
                         lastname = data.lastname,
@@ -100,6 +104,7 @@ namespace Hello.Controllers
                     {
                         username = data.username,
                         password = data.password,
+                        course = data.course,
                         role = "student"
                     };
 

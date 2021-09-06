@@ -1,7 +1,19 @@
 ﻿@{
-    Layout = "_Student";
+    Layout = "_Administrator";
 
 }
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+
+
+    });
+    </script>
+}
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -13,12 +25,13 @@
         <!-- partial -->
         <!-- this is form-->
 
-        <form method="post" asp-controller="Studentadd" asp-action="Index">
+        <form method="post" asp-controller="Administratoradd" asp-action="Newteacher">
 
             <a type="button" class="btn btn-info btn-fw" asp-controller="Studentadd" asp-action="Index" style="height:50px; width:20px;">
                 <i class="mdi mdi-account"></i>New Student
             </a>
         </form>
+
         <h2>
             Student details
 
@@ -30,19 +43,69 @@
             <div class="card">
                 <div class="card-body">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="datatable">
                         <thead>
                             <tr>
                                 <th> ID </th>
                                 <th> Email </th>
-                                <th> Username </th>
-                                <th> password </th>
-
+                                <th> Firstname </th>
+                                <th> Student Code </th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+
+                            @foreach (var item in ViewBag.d)
+                            {
+                                <tr>
+                                    <td> @item.sid </td>
+                                    <td> @item.email </td>
+                                    <td>
+                                        @item.firstname
+                                    </td>
+                                    <td> @item.studentcode </td>
+
+                                    <td>
+                                        @*  <a asp-controller="Updatestudent" asp-action="delete" asp-route-sid="@item.sid" onclick="return confirm('Are you sure you want  to delete student with email:@item.email')" class="btn btn-danger">DELETE</a>*@
+                                        <a asp-controller="Updatestudent" asp-action="Delete" asp-route-sid="@item.sid" onclick="return confirm('Are you sure to delete admin with email: @item.email')" class="btn btn-danger">Delete</a>
+                                        <a asp-controller="Updatestudent" asp-action="Index" asp-route-sid="@item.sid" class="btn btn-success">UPDATE</a>
+                                    </td>
+
+                                </tr>
+                            }
+
+
+
+
                         </tbody>
                     </table>
+
+
+                    @* <table class="table table-bordered" id="datatable">
+                    <thead>
+                        <tr>
+                            <th> ID </th>
+                            <th> Email </th>
+                            <th> Firstname </th>
+                            <th> Student Code </th>
+
+                        </tr>
+                        @foreach (var data in ViewBag.d)
+                        {
+
+                        <td>@data.sid</td>
+                        <td>@data.email</td>
+                        <td>@data.firstname</td>
+                        <td>@data.studentcode</td>
+                        <td>
+                            <input type="submit" value="Update" class="btn btn-primary submit-btn btn-block" />&nbsp;
+                            <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />
+                        </td>
+                    }
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>*@
                 </div>
             </div>
         </div>

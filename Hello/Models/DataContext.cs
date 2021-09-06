@@ -29,7 +29,7 @@ namespace Hello.Models
 		public DbSet<library> libraries { get; set; }
 
 		public DbSet<userlogin> userlogins { get; set; }
-		public DbSet<Administratorregister> Administratorregisters { get; set; }
+		public DbSet<Administratorregisters> Administratorregisters { get; set; }
 
 		public DbSet<Studentregister> Studentregisters { get; set; }
 

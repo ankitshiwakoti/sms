@@ -1,7 +1,19 @@
 ﻿@{
-    Layout = "_Teacher";
+    Layout = "_Admin";
 
 }
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+
+
+    });
+    </script>
+}
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -15,7 +27,7 @@
 
         <form method="post" asp-controller="Administratoradd" asp-action="Newteacher">
 
-            <a type="button" class="btn btn-info btn-fw" asp-controller="Newteacher" asp-action="Newteacher" style="height:50px; width:20px;">
+            <a type="button" class="btn btn-info btn-fw" asp-controller="Teacheradd" asp-action="Teacheradd" style="height:50px; width:20px;">
                 <i class="mdi mdi-account"></i>New Teacher
             </a>
         </form>
@@ -30,17 +42,31 @@
             <div class="card">
                 <div class="card-body">
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="datatable">
                         <thead>
                             <tr>
                                 <th> ID </th>
                                 <th> Email </th>
                                 <th> Username </th>
                                 <th> password </th>
+                                <th>Action</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach(var item in ViewBag.d)
+                                {
+                            <tr>
+                                <td>@item.tid </td>
+                                <td>@item.email</td>
+                                <td>@item.studentcode</td>
+                                <td> @item.firstname</td>
+                                <td>
+                                    <a asp-controller="Noticedata" asp-action="Index" asp-route-nid="@item.tid" class="btn btn-success">View</a>
+                                </td>
+                                </tr>
+
+                                     }
                         </tbody>
                     </table>
                 </div>

@@ -13,10 +13,6 @@ namespace Hello.Models
         public String lastname { get; set; }
         public String bloodgroup { get; set; }
         public String dateofbirth { get; set; }
-
-        [Required(ErrorMessage = "Please enter phone number")]
-        [Display(Name = "Phone Number")]
-        [Phone]
         public String phoneno { get; set; }
         public String gender { get; set; }
         public String country { get; set; }

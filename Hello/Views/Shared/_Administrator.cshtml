@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.base.css">
     <link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.addons.css">
+    <link href="~/lib/jquery-datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -199,55 +200,55 @@
                             </a>
                         </li>
                         <!--new added menu1 Administrator -->
-                        <li class="nav-item">
+                       @* <li class="nav-item">
                             <a class="nav-link" asp-controller="Viewadministrator" asp-action="Index">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Administrator</span>
                             </a>
-                        </li>
+                        </li>*@
                         <!-- end menu1 Administrator -->
                         <!--new added menu1 Teacher -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                       @* <li class="nav-item">
+                            <a class="nav-link" href="#" asp-controller="Viewteacher" asp-action="Index">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">teacher</span>
                             </a>
-                        </li>
+                        </li>*@
                         <!-- end menu1 Teacher -->
                         <!--new added menu1 Student -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link"  asp-controller="Viewstudent" asp-action="Index">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Student</span>
                             </a>
                         </li>
                         <!-- end menu1 Student  -->
                         <!--new added menu1 Staff -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        @*<li class="nav-item">
+                            <a class="nav-link" href="#" asp-controller="Viewstaff" asp-action="Index">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Staff</span>
                             </a>
-                        </li>
+                        </li>*@
                         <!-- end menu1 Staff -->
                         <!--new added menu1 Parents -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Parents</span>
                             </a>
-                        </li>
+                        </li>-->
                         <!-- end menu1 Parents -->
                         <!--new added menu1 Library -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Library</span>
                             </a>
-                        </li>
+                        </li>-->
                         <!-- end menu1 Library -->
                         <!--new added menu1 Classes -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                                 <i class="menu-icon typcn typcn-coffee"></i>
                                 <span class="menu-title">Classes</span>
@@ -276,11 +277,11 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li>-->
 
                         <!--end menu1 Classes -->
                         <!--new added menu1 Attandance -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                                 <i class="menu-icon typcn typcn-document-add"></i>
                                 <span class="menu-title">User Pages</span>
@@ -297,67 +298,67 @@
 
                                 </ul>
                             </div>
-                        </li>
+                        </li>-->
 
                         <!--end menu1 Attandance -->
                         <!--new added menu1 Event -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Event</span>
                             </a>
-                        </li>
+                        </li>-->
                         <!--end menu1 Event -->
                         <!--new added menu1 Notify -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link"  asp-controller="Complainview" asp-action="Index">
                                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                                <span class="menu-title">Notify</span>
+                                <span class="menu-title">Complain</span>
                             </a>
                         </li>
                         <!--end menu1  Notify-->
                         <!--new added menu1 Transport -->
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link" href="#">
                                 <i class="menu-icon typcn typcn-bell"></i>
                                 <span class="menu-title">Transport</span>
                             </a>
-                        </li>
+                        </li>*@
                         <!--end menu1 Transport -->
                         <!--new added menu1 Genneral Setting -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" asp-controller="Complainview" asp-action="Index">
                                 <i class="menu-icon typcn typcn-user-outline"></i>
                                 <span class="menu-title">General setting</span>
                             </a>
                         </li>
                         <!--end menu1 General Seting -->
                         <!-- <li class="nav-item">
-                         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                             <i class="menu-icon typcn typcn-document-add"></i>
-                             <span class="menu-title">User Pages</span>
-                             <i class="menu-arrow"></i>
-                         </a>
-                           <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                    </li>
-                </ul>
-            </div>
-                        </li>-->
+                                     <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                                         <i class="menu-icon typcn typcn-document-add"></i>
+                                         <span class="menu-title">User Pages</span>
+                                         <i class="menu-arrow"></i>
+                                     </a>
+                                       <div class="collapse" id="auth">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/login.html"> Login </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/register.html"> Register </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
+                                </li>
+                            </ul>
+                        </div>
+                                    </li>-->
                     </ul>
                 </nav>
 
@@ -367,21 +368,20 @@
 
 
 
-                
-                       
 
-                      
-                       
-                       
-                       
-                        <!-- partial -->
-                 
+
+
+
+
+
+
+                <!-- partial -->
                 <!-- page-body-wrapper ends -->
             </div>
         </div>
 
 
-       
+
 
         <script src="~/assets/vendors/js/vendor.bundle.base.js"></script>
         <script src="~/assets/vendors/js/vendor.bundle.addons.js"></script>
@@ -397,4 +397,8 @@
 
     </div>
 </body>
+
+<script src="~/lib/jquery-datatables/js/jquery.dataTables.min.js"></script>
+
 </html>
+@RenderSection("Scripts", required: false)

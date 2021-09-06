@@ -17,26 +17,7 @@ namespace Hello.Controllers
             return View();
         }
 
-        /*
-                [HttpPost]
-                public IActionResult LoginCheck(String username, String password)
-                {
-                    var user_List = dal.userlogins.Where(x => x.username.Equals(username)).ToList();
-
-                    #region IF admin role check
-
-                    if (user_List.Count() == 1 && user_List[0].password.Equals(password) && user_List[0].role.Equals("admin") && user_List[0].status.Equals("Active"))
-                    {
-                        //admin role
-                        //setting session using HttpContext
-
-                        HttpContext.Session.SetString("User", JsonConvert.SerializeObject(user_List[0])); //note argument should be in strings only.
-                        HttpContext.Session.SetString("Logged", "true");
-                        HttpContext.Session.SetString("password", password);
-
-                        return RedirectToAction("View_Appointment", "Admin_Appointment");
-                    }
-        */
+       
 
         //mycode
         [HttpPost]
@@ -51,9 +32,10 @@ namespace Hello.Controllers
                 //admin role
                 //setting session using HttpContext
 
-                /* HttpContext.Session.SetString("User", JsonConvert.SerializeObject(user_List[0])); //note argument should be in strings only.
+                 HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0])); //note argument should be in strings only.
                  HttpContext.Session.SetString("Logged", "true");
-                 HttpContext.Session.SetString("password",password);*/
+                 HttpContext.Session.SetString("course", userlist[0].course);
+                 HttpContext.Session.SetString("password",password);
                 // return RedirectToAction("Index", "Home");
                 return Redirect("/Home/Index");
 
@@ -68,7 +50,7 @@ namespace Hello.Controllers
                  HttpContext.Session.SetString("Logged", "true");
                  HttpContext.Session.SetString("password",password);*/
                 // return RedirectToAction("Index", "Home");
-                return Redirect("/Administrsator/Administrator");
+                return RedirectToAction("Administrator", "Administrator");
 
             }
             else if (userlist.Count() == 1 && userlist[0].password.Equals(password) && userlist[0].role.Equals("teacher"))
@@ -81,7 +63,16 @@ namespace Hello.Controllers
                  HttpContext.Session.SetString("Logged", "true");
                  HttpContext.Session.SetString("password",password);*/
                 // return RedirectToAction("Index", "Home");
-                return Redirect("/Teacher/Index");
+
+
+                HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0]));
+                String course = userlist[0].course;
+                HttpContext.Session.SetString("course", course);
+                /* HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0])); //note argument should be in strings only.
+                 HttpContext.Session.SetString("Logged", "true");
+                 HttpContext.Session.SetString("course", userlist[0].course);
+                 HttpContext.Session.SetString("password", password);*/
+                return RedirectToAction("Index","Teacher");
 
             }
               else if (userlist.Count() == 1 && userlist[0].password.Equals(password) && userlist[0].role.Equals("student"))

@@ -14,9 +14,14 @@ namespace Hello.Models
 
         [Key]
         public int id { get; set; }
+
         public String email { get; set; }
+
         public String fullname { get; set; }
+
+
         public String address { get; set; }
+
         public String contactno { get; set; }
 
         
