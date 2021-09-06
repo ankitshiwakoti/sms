@@ -81,11 +81,14 @@ namespace Hello.Controllers
                 //admin role
                 //setting session using HttpContext
 
-                /* HttpContext.Session.SetString("User", JsonConvert.SerializeObject(user_List[0])); //note argument should be in strings only.
-                 HttpContext.Session.SetString("Logged", "true");
-                 HttpContext.Session.SetString("password",password);*/
-                // return RedirectToAction("Index", "Home");
-                return Redirect("/Student/Index");
+                 HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0]));
+                //note argument should be in strings only.
+                string course = userlist[0].course;
+                 HttpContext.Session.SetString("course", course);
+
+                // HttpContext.Session.SetString("password",password);
+                 return RedirectToAction("Index", "Student");
+               // return Redirect("/Student/Index");
 
             }
 

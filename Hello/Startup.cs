@@ -24,6 +24,12 @@ namespace Hello
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //session code start
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
+            //session code end
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,6 +38,9 @@ namespace Hello
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                //session start
+                app.UseSession();
+                //session end
             }
             else
             {
