@@ -1,0 +1,71 @@
+﻿@page
+@model Hello.Views.Teachernotice.IndexModel
+@{
+    Layout = "_Teacher";
+}
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#datatable').DataTable();
+
+
+    });
+    </script>
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-10 grid-margin stretch-card" >
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Notice  </h4>
+                        <table class="table" id="datatable">
+                            <thead>
+                                <tr>
+                                    <th>Notice Id</th>
+                                    <th>Notice topic </th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var data in ViewBag.d)
+                                {
+                                    <tr>
+                                        <td>@data.nid</td>
+                                        <td>@data.ntopic</td>
+                                        <td>@data.date</td>
+
+                                        <td>
+                                            <a asp-controller="Teachernoticedata" asp-action="Index" asp-route-nid="@data.nid" class="btn btn-success">View</a>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:../../partials/_footer.html -->
+    <footer class="footer">
+        <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+            </span>
+        </div>
+    </footer>
+    <!-- partial -->
+</div>

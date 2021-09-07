@@ -12,6 +12,8 @@ namespace Hello.Controllers
         DataContext dal = new DataContext();
         public IActionResult Index()
         {
+            var data = dal.Courseadds.ToList();
+            ViewBag.d = data;
             return View();
         }
 

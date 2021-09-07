@@ -2,6 +2,17 @@
 
     Layout = "_Administrator";
 }
+@section Scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#datatable').DataTable();
+
+
+        });
+    </script>
+}
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -14,12 +25,11 @@
 
                         <div class="card-body">
                             <h4 class="card-title">Notice  </h4>
-                            <table class="table">
+                            <table class="table" id="datatable">
                                 <thead>
-                                    <tr style="position:sticky;">
+                                    <tr>
                                         <th>Complain id</th>
                                         <th>Complain subject</th>
-
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -36,8 +46,8 @@
 
 
                                                 @* <input type="submit" value="view" onclick="btnclick()" class="btn btn-primary submit-btn btn-block" />
-                                            &nbsp;
-                                            <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />*@
+                                                    &nbsp;
+                                                    <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />*@
                                             </td>
                                         </tr>
                                     }
@@ -53,67 +63,65 @@
         </center>
 
         <!--<script>
-     function btnclick() {
-         $.ajax({
-            url:'@Url.Action("result", "Complainview")',
-            type: "GET",
-             dataType: "text",
-             success: function (response) {
-                  console.log(response);
+        function btnclick() {
+            $.ajax({
+               url:'@Url.Action("result", "Complainview")',
+               type: "GET",
+                dataType: "text",
+                success: function (response) {
+                     console.log(response);
 
-                  parsedata = JSON.parse(response);
+                     parsedata = JSON.parse(response);
 
-                 console.log(parsedata);-->
+                    console.log(parsedata);-->
         @*$("#aid").text(val.aid);
-        $("#notice").text(val.notice);
-        $("#noticename").text(val.noticename);
-        $("#publisher").text(val.publisher);*@
+            $("#notice").text(val.notice);
+            $("#noticename").text(val.noticename);
+            $("#publisher").text(val.publisher);*@
         @* $('#nid').val(parsedata.cid);
-        $('#nsub').val(parsedata.complainsub);
-        $('#cto').val(parsedata.complainto);
-        $('#complain').val(parsedata.complain);*@
+            $('#nsub').val(parsedata.complainsub);
+            $('#cto').val(parsedata.complainto);
+            $('#complain').val(parsedata.complain);*@
 
         <!--$("#complain").text(parsedata.complain);
 
 
 
-               },
+                   },
 
 
-                error: function () { alert("not working ");}
-            });
-        }
-    </script>-->
-
-    <!--<script>
-            function btnclick() {
-                var id = $("#cid").val();-->
-               @* var obj = {
-                    Id=id
-                }*@
-                <!--senddata(id);
-            }
-
-            function senddata(id) {
-                $.ajax({
-
-                    url:"/Complainview/data",
-                   
-                    type:"POST",
-                    data:id,
-                    success: function (data) {
-
-                        alert(data);-->
-                       @* console.log(data);
-                        data= JSON.parse(data);*@
-                   <!--},
                     error: function () { alert("not working ");}
                 });
             }
+        </script>-->
+        <!--<script>
+                function btnclick() {
+                    var id = $("#cid").val();-->
+        @* var obj = {
+                Id=id
+            }*@
+        <!--senddata(id);
+        }
+
+        function senddata(id) {
+            $.ajax({
+
+                url:"/Complainview/data",
+
+                type:"POST",
+                data:id,
+                success: function (data) {
+
+                    alert(data);-->
+        @* console.log(data);
+            data= JSON.parse(data);*@
+        <!--},
+                        error: function () { alert("not working ");}
+                    });
+                }
 
 
-    </script>-->
-
+        </script>-->
         <!-- content-wrapper ends -->
         <!-- partial:../../partials/_footer.html -->
         <footer class="footer">

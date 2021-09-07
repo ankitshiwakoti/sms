@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "_Administrator";
+    Layout = "_Admin";
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -9,6 +9,29 @@
                     <h1 class="card-title">Create Notice</h1>
 
                     <form class="forms-sample" asp-controller="Noticeadd" asp-action="createnotice">
+
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Send To</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="course">
+                                        <option>teacher</option>
+                                        @foreach(var iteam in ViewBag.d){
+                                        <option>@iteam.coursename</option>
+                                        }
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" name="date" placeholder="dd/mm/yyyy" />
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="exampleInputName1">Notice Topic</label>
                             <input type="text" class="form-control" name="ntopic" placeholder="Notice topic">
@@ -21,9 +44,9 @@
 
 
                         @*<div class="form-group">
-                            <label for="exampleTextarea1">Complain</label>
-                            <textarea class="form-control" name="complain" rows="2" placeholder="write your complain here "></textarea>
-                        </div>*@
+            <label for="exampleTextarea1">Complain</label>
+            <textarea class="form-control" name="complain" rows="2" placeholder="write your complain here "></textarea>
+        </div>*@
 
                         <button type="submit" class="btn btn-success mr-2">Submit</button>
                         <button class="btn btn-light">Cancel</button>

@@ -20,7 +20,9 @@
 
         <h2>New Student Entry</h2>
 
-
+        <br />
+        <br />
+        <h4 class="card-title" style="color:darkred;">please fill every field </h4>
 
 
         <div class="col-12 grid-margin">
@@ -32,7 +34,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label"  >First Name</label>
+                                    <label class="col-sm-3 col-form-label">First Name</label>
                                     <div class="col-sm-9">
                                         <input type="text" name="firstname" class="form-control" />
                                     </div>
@@ -42,7 +44,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Last Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text"  name="lastname"  class="form-control" />
+                                        <input type="text" name="lastname" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -65,14 +67,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            @*<div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Date of Birth</label>
                                     <div class="col-sm-9">
                                         <input type="date" class="form-control"  name="dateofbirth" placeholder="dd/mm/yyyy" />
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
                         <div class="row">
 
@@ -165,7 +167,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">District</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="district" >
+                                        <select class="form-control" name="district">
                                             <option>Jhapa</option>
                                             <option>Ilam</option>
                                             <option>Pachthar</option>
@@ -241,7 +243,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Password</label>
                                     <div class="col-sm-9">
-                                        <input type="password"  class="form-control" />
+                                        <input type="password" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +251,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Conform Password</label>
                                     <div class="col-sm-9">
-                                        <input type="password"  name="password" class="form-control" />
+                                        <input type="password" name="password" class="form-control" />
                                     </div>
                                 </div>
                             </div>
@@ -258,16 +260,16 @@
                         <h4 class="card-title">School Details</h4>
 
 
-                        <div class="row"> 
+                        <div class="row">
 
-                            <div class="col-md-6">
+                            @* <div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Joining Data</label>
                                     <div class="col-sm-9">
                                         <input type="date" class="form-control" name="joiningdate" placeholder="dd/mm/yyyy" />
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
 
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -276,12 +278,12 @@
                                         <select class="form-control" name="course">
 
                                             @foreach (var d in ViewBag.course)
-                                                {
-                                                    <option>@d.coursename</option>
+                                            {
+                                                <option>@d.coursename</option>
 
-                                                }
+                                            }
 
-                                            
+
 
                                         </select>
                                     </div>
@@ -309,10 +311,28 @@
                             </div>
 
                         </div>
-                        <input type="submit" value="Submit" class="btn btn-success mr-2"/>
-                        <input class="btn btn-light" value="Cancel"/>
+                        <input type="submit" value="Submit" class="btn btn-success mr-2" />
+                        <input class="btn btn-light" value="Cancel" />
 
                     </form>
+                    <!-- Bulk entry start  -->
+                    <br /><br />
+                    <h4 class="card-title" style="color:red;">Bulk Entry </h4>
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+                            <form method="post" enctype="multipart/form-data" asp-controller="Studentbulk" asp-action="Import">
+                                <input type="file" name="file" />
+                                <button type="submit"> Import from excell </button>
+                            </form>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <h4 style="color:green;" class="card-title">please use the prescribed excell format for bulk entry  </h4>
+                    <!-- Bulk entry ends  ends -->
+
                 </div>
             </div>
         </div>

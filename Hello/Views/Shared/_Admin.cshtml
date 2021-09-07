@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -154,8 +156,13 @@
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                             <div class="dropdown-header text-center">
                                 <img class="img-md rounded-circle" src="~/assets/images/faces/hello.jpg" alt="Profile image">
-                                <p class="mb-1 mt-3 font-weight-semibold">Ankit Shiwakoti</p>
-                                <p class="font-weight-light text-muted mb-0">Shiwakotiankit@gmail.com</p>
+
+                                @{var role = Context.Session.GetString("role"); }
+                                @{var name = Context.Session.GetString("name"); }
+                                @{var email = Context.Session.GetString("email"); }
+
+                                <p class="mb-1 mt-3 font-weight-semibold">@name</p>
+                                <p class="font-weight-light text-muted mb-0">@email</p>
                             </div>
                             <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
                             <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
@@ -182,8 +189,8 @@
                                 <div class="dot-indicator bg-success"></div>
                             </div>
                             <div class="text-wrapper">
-                                <p class="profile-name">Ankit shiwakoti</p>
-                                <p class="designation">Admin</p>
+                                <p class="profile-name">@name</p>
+                                <p class="designation">@role</p>
                             </div>
                         </a>
                     </li>
@@ -211,9 +218,16 @@
                     <!-- end menu1 Administrator -->
                     <!--new added menu1 Teacher -->
                     <li class="nav-item">
-                        <a class="nav-link"  asp-controller="Viewteacher" asp-action="Index">
+                        <a class="nav-link" asp-controller="Viewteacher" asp-action="Index">
                             <i class="menu-icon typcn typcn-shopping-bag"></i>
                             <span class="menu-title">Teacher</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Viewstaff" asp-action="Index">
+                            <i class="menu-icon typcn typcn-shopping-bag"></i>
+                            <span class="menu-title">staff</span>
                         </a>
                     </li>
                     <!-- end menu1 Teacher -->
@@ -229,6 +243,13 @@
                             <span class="menu-title">Notice</span>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Courseadd" asp-action="Index">
+                            <i class="menu-icon typcn typcn-shopping-bag"></i>
+                            <span class="menu-title">Course</span>
+                        </a>
+                    </li>
                     <!-- end menu1 Library -->
                     <!--new added menu1 Classes -->
                     <!--end menu1 Classes -->
@@ -242,38 +263,38 @@
                     <!--end menu1 Transport -->
                     <!--new added menu1 Genneral Setting -->
                     <li class="nav-item">
-                        <a class="nav-link"  asp-controller="Viewadministrator" asp-action="Index" >
+                        <a class="nav-link" asp-controller="Viewadministrator" asp-action="Index">
                             <i class="menu-icon typcn typcn-user-outline"></i>
                             <span class="menu-title">General setting</span>
                         </a>
                     </li>
                     <!--end menu1 General Seting -->
                     <!-- <li class="nav-item">
-                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                     <i class="menu-icon typcn typcn-document-add"></i>
-                     <span class="menu-title">User Pages</span>
-                     <i class="menu-arrow"></i>
-                 </a>
-                   <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-                <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/samples/login.html"> Login </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/samples/register.html"> Register </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-            </li>
-        </ul>
-    </div>
-                </li>-->
+                                 <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                                     <i class="menu-icon typcn typcn-document-add"></i>
+                                     <span class="menu-title">User Pages</span>
+                                     <i class="menu-arrow"></i>
+                                 </a>
+                                   <div class="collapse" id="auth">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/samples/login.html"> Login </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/samples/register.html"> Register </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
+                            </li>
+                        </ul>
+                    </div>
+                                </li>-->
                 </ul>
             </nav>
 

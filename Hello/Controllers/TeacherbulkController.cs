@@ -41,23 +41,23 @@ namespace Hello.Controllers
                             firstname = worksheet.Cells[row, 1].Value.ToString().Trim(),
                             lastname = worksheet.Cells[row, 2].Value.ToString().Trim(),
                             bloodgroup = worksheet.Cells[row, 3].Value.ToString().Trim(),
-                            dateofbirth = worksheet.Cells[row, 4].Value.ToString().Trim(),
-                            phoneno = worksheet.Cells[row, 5].Value.ToString().Trim(),
-                            gender = worksheet.Cells[row, 6].Value.ToString().Trim(),
-                            country = worksheet.Cells[row, 7].Value.ToString().Trim(),
-                            state = worksheet.Cells[row, 8].Value.ToString().Trim(),
-                            zone = worksheet.Cells[row, 9].Value.ToString().Trim(),
-                            district = worksheet.Cells[row, 10].Value.ToString().Trim(),
-                            cityname = worksheet.Cells[row, 11].Value.ToString().Trim(),
-                            streetname = worksheet.Cells[row, 12].Value.ToString().Trim(),
-                            postalcode = worksheet.Cells[row, 13].Value.ToString().Trim(),
-                            email = worksheet.Cells[row, 14].Value.ToString().Trim(),
-                            username = worksheet.Cells[row, 15].Value.ToString().Trim(),
-                            password = worksheet.Cells[row, 16].Value.ToString().Trim(),
-                            joiningdate = worksheet.Cells[row, 17].Value.ToString().Trim(),
-                            course = worksheet.Cells[row, 18].Value.ToString().Trim(),
-                            studentcode = worksheet.Cells[row, 19].Value.ToString().Trim(),
-                            shift = worksheet.Cells[row, 20].Value.ToString().Trim()
+                          
+                            phoneno = worksheet.Cells[row, 4].Value.ToString().Trim(),
+                            gender = worksheet.Cells[row, 5].Value.ToString().Trim(),
+                            country = worksheet.Cells[row, 6].Value.ToString().Trim(),
+                            state = worksheet.Cells[row, 7].Value.ToString().Trim(),
+                            zone = worksheet.Cells[row, 8].Value.ToString().Trim(),
+                            district = worksheet.Cells[row, 9].Value.ToString().Trim(),
+                            cityname = worksheet.Cells[row, 10].Value.ToString().Trim(),
+                            streetname = worksheet.Cells[row, 11].Value.ToString().Trim(),
+                            postalcode = worksheet.Cells[row, 12].Value.ToString().Trim(),
+                            email = worksheet.Cells[row, 13].Value.ToString().Trim(),
+                            username = worksheet.Cells[row, 14].Value.ToString().Trim(),
+                            password = worksheet.Cells[row, 15].Value.ToString().Trim(),
+                            
+                            course = worksheet.Cells[row, 16].Value.ToString().Trim(),
+                            studentcode = worksheet.Cells[row, 17].Value.ToString().Trim(),
+                            shift = worksheet.Cells[row, 18].Value.ToString().Trim()
                            
                         }); ;
                     }
@@ -82,7 +82,7 @@ namespace Hello.Controllers
                         firstname = data.firstname,
                         lastname = data.lastname,
                         bloodgroup = data.bloodgroup,
-                        dateofbirth = data.dateofbirth,
+                       
                         phoneno = data.phoneno,
                         gender = data.gender,
                         country = data.country,
@@ -93,7 +93,7 @@ namespace Hello.Controllers
                         streetname = data.streetname,
                         postalcode = data.postalcode,
                         email = data.email,
-                        joiningdate = data.joiningdate,
+                       
                         course = data.course,
                         studentcode = data.studentcode,
                         shift = data.shift
@@ -105,6 +105,7 @@ namespace Hello.Controllers
                         username = data.username,
                         password = data.password,
                         course = data.course,
+                        email = data.email,
                         role = "student"
                     };
 

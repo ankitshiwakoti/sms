@@ -32,6 +32,7 @@ namespace Hello.Controllers
                     {
                         username = datamodel.username,
                         password = datamodel.password,
+                        email = datamodel.email,
                         role = "admin",
                         course="null"
 

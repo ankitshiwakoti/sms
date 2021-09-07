@@ -16,6 +16,7 @@ namespace Hello.Models
         public String password { get; set; }
         public String role { get; set; }
         public String course { get; set; }
+        public String email { get; set; }
 
     }
 }

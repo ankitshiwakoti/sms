@@ -31,7 +31,8 @@ namespace Hello.Controllers
                 {
                     username=viewmodel.username,
                     password=viewmodel.password,
-                    role="teacher",
+                    email = viewmodel.email,
+                    role ="teacher",
                     course=viewmodel.course
 
                 };
@@ -41,7 +42,7 @@ namespace Hello.Controllers
                     firstname = viewmodel.firstname,
                     lastname = viewmodel.lastname,
                     bloodgroup = viewmodel.bloodgroup,
-                    dateofbirth = viewmodel.dateofbirth,
+                   
                     phoneno = viewmodel.phoneno,
                     gender = viewmodel.gender,
                     country = viewmodel.country,
@@ -52,7 +53,7 @@ namespace Hello.Controllers
                     streetname = viewmodel.streetname,
                     postalcode = viewmodel.postalcode,
                     email = viewmodel.email,
-                    joiningdate = viewmodel.joiningdate,
+                   
                     course = viewmodel.course,
                     studentcode = viewmodel.studentcode,
                     shift = viewmodel.shift

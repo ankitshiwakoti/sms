@@ -23,7 +23,16 @@
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label"> Notice Id </label>
-                                        <textarea class="form-control" id="aid" rows="1" cols="1">@ViewBag.da.nid </textarea>
+                                        <textarea  readonly class="form-control" id="aid" rows="1" cols="1">@ViewBag.da.nid </textarea>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label"> Notice Id </label>
+                                        <textarea readonly class="form-control" id="aid" rows="1" cols="1">@ViewBag.da.date </textarea>
 
                                     </div>
                                 </div>
@@ -32,7 +41,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label"> Notice Topic </label>
-                                        <textarea class="form-control" id="noticename" rows="1" cols="1"> @ViewBag.da.ntopic</textarea>
+                                        <textarea readonly class="form-control" id="noticename" rows="1" cols="1"> @ViewBag.da.ntopic</textarea>
 
                                     </div>
                                 </div>
@@ -41,7 +50,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label" >Notice </label>
-                                        <textarea class="form-control" id="publisher" rows="1" cols="1">@ViewBag.da.notice </textarea>
+                                        <textarea readonly class="form-control" id="publisher" rows="1" cols="1">@ViewBag.da.notice </textarea>
 
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@ namespace Hello.Models
         public String firstname { get; set; }
         public String lastname { get; set; }
         public String bloodgroup { get; set; }
-        public String dateofbirth { get; set; }
+       
         public String phoneno { get; set; }
         public String gender { get; set; }
         public String country { get; set; }
@@ -23,7 +23,7 @@ namespace Hello.Models
         public String email { get; set; }
         public String username { get; set; }
         public String password { get; set; }
-        public String joiningdate { get; set; }
+       
         public String course { get; set; }
         public String staffcode { get; set; }
         public String shift { get; set; }

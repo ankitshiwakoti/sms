@@ -99,3 +99,7 @@ C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Upda
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updatestudent\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updatestaff\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Stdview\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Tecview\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Teachernoticedata\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Teachernotice\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updateteacher\Index.cshtml.g.cs

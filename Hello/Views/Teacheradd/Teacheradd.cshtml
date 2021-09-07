@@ -19,7 +19,9 @@
 
 
                 <h2>New Teacher Entry</h2>
-
+                <br />
+                <br />
+                <h4 class="card-title" style="color:darkred;">please fill every field </h4>
 
 
 
@@ -65,14 +67,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Date of Birth</label>
-                                            <div class="col-sm-9">
-                                                <input type="date" class="form-control" name="dateofbirth" placeholder="dd/mm/yyyy" />
-                                            </div>
-                                        </div>
+                                    @*   <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Date of Birth</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="dateofbirth" placeholder="dd/mm/yyyy" />
                                     </div>
+                                </div>
+                            </div>*@
                                 </div>
                                 <div class="row">
 
@@ -260,14 +262,14 @@
 
                                 <div class="row">
 
-                                    <div class="col-md-6">
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Joining Data</label>
-                                            <div class="col-sm-9">
-                                                <input type="date" class="form-control" name="joiningdate" placeholder="dd/mm/yyyy" />
-                                            </div>
-                                        </div>
+                                    @*  <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Joining Data</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" class="form-control" name="joiningdate" placeholder="dd/mm/yyyy" />
                                     </div>
+                                </div>
+                            </div>*@
 
                                     <div class="col-md-6">
                                         <div class="form-group row">
@@ -303,6 +305,23 @@
                                 <input class="btn btn-light" value="Cancel" />
 
                             </form>
+                            <!-- bulk entry code start-->
+                            <br /><br />
+                            <h4 class="card-title" style="color:red;">Bulk Entry </h4>
+                            <br /><br />
+                            <div class="row">
+                                <div class="col-md-6">
+
+
+                                    <form method="post" enctype="multipart/form-data" asp-controller="Teacherbulk" asp-action="Import">
+                                        <input type="file" name="file" />
+                                        <button type="submit"> Import from excell </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <br /><br />
+                            <h4 style="color:green;" class="card-title">please use the prescribed excell format for bulk entry  </h4>
+                            <!-- bulk entry code end-->
                         </div>
                     </div>
                 </div>

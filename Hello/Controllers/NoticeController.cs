@@ -10,19 +10,21 @@ namespace Hello.Controllers
     public class NoticeController : Controller
     {
         DataContext dal = new DataContext();
-        public IActionResult Notice()
+        public IActionResult Notice(string course )
         {
-            selectnotice();
+
+            var data = dal.notices.Where(x => x.course.Equals(course)).ToList();
+            ViewBag.da = data;
             return View();
         }
 
-        public IActionResult selectnotice()
+      /*  public IActionResult selectnotice()
         {
             var data = dal.notices.ToList();
-            ViewBag.da = data;
+          
             return RedirectToAction("Index", "Notice");
 
-        }
+        }*/
 
 
     }

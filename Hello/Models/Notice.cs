@@ -14,6 +14,8 @@ namespace Hello.Models
         public int nid { get; set; }
         public String ntopic { get; set; }
         public String notice { get; set; }
+        public String date { get; set; }
+        public String course { get; set; }
 
     }
 }

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -159,8 +161,13 @@
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                                 <div class="dropdown-header text-center">
                                     <img class="img-md rounded-circle" src="~/assets/images/faces/face8.jpg" alt="Profile image">
-                                    <p class="mb-1 mt-3 font-weight-semibold">Ankit Shiwakoti</p>
-                                    <p class="font-weight-light text-muted mb-0">Shiwakotiankit@gmail.com</p>
+
+
+                                    @{var role = Context.Session.GetString("role"); }
+                                    @{var name = Context.Session.GetString("name"); }
+                                    @{var email = Context.Session.GetString("email"); }
+                                    <p class="mb-1 mt-3 font-weight-semibold">@name</p>
+                                    <p class="font-weight-light text-muted mb-0">@email</p>
                                 </div>
                                 <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
                                 <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
@@ -187,8 +194,8 @@
                                     <div class="dot-indicator bg-success"></div>
                                 </div>
                                 <div class="text-wrapper">
-                                    <p class="profile-name">Ankit shiwakoti</p>
-                                    <p class="designation">Administrator</p>
+                                    <p class="profile-name">@name</p>
+                                    <p class="designation">@role</p>
                                 </div>
                             </a>
                         </li>
@@ -200,24 +207,24 @@
                             </a>
                         </li>
                         <!--new added menu1 Administrator -->
-                       @* <li class="nav-item">
-                            <a class="nav-link" asp-controller="Viewadministrator" asp-action="Index">
-                                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">Administrator</span>
-                            </a>
-                        </li>*@
+                        @* <li class="nav-item">
+                                <a class="nav-link" asp-controller="Viewadministrator" asp-action="Index">
+                                    <i class="menu-icon typcn typcn-shopping-bag"></i>
+                                    <span class="menu-title">Administrator</span>
+                                </a>
+                            </li>*@
                         <!-- end menu1 Administrator -->
                         <!--new added menu1 Teacher -->
-                       @* <li class="nav-item">
-                            <a class="nav-link" href="#" asp-controller="Viewteacher" asp-action="Index">
-                                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">teacher</span>
-                            </a>
-                        </li>*@
+                        @* <li class="nav-item">
+                                <a class="nav-link" href="#" asp-controller="Viewteacher" asp-action="Index">
+                                    <i class="menu-icon typcn typcn-shopping-bag"></i>
+                                    <span class="menu-title">teacher</span>
+                                </a>
+                            </li>*@
                         <!-- end menu1 Teacher -->
                         <!--new added menu1 Student -->
                         <li class="nav-item">
-                            <a class="nav-link"  asp-controller="Viewstudent" asp-action="Index">
+                            <a class="nav-link" asp-controller="Viewstudent" asp-action="Index">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                                 <span class="menu-title">Student</span>
                             </a>
@@ -225,11 +232,11 @@
                         <!-- end menu1 Student  -->
                         <!--new added menu1 Staff -->
                         @*<li class="nav-item">
-                            <a class="nav-link" href="#" asp-controller="Viewstaff" asp-action="Index">
-                                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">Staff</span>
-                            </a>
-                        </li>*@
+                                <a class="nav-link" href="#" asp-controller="Viewstaff" asp-action="Index">
+                                    <i class="menu-icon typcn typcn-shopping-bag"></i>
+                                    <span class="menu-title">Staff</span>
+                                </a>
+                            </li>*@
                         <!-- end menu1 Staff -->
                         <!--new added menu1 Parents -->
                         <!--<li class="nav-item">
@@ -278,7 +285,6 @@
                                 </ul>
                             </div>
                         </li>-->
-
                         <!--end menu1 Classes -->
                         <!--new added menu1 Attandance -->
                         <!--<li class="nav-item">
@@ -299,7 +305,6 @@
                                 </ul>
                             </div>
                         </li>-->
-
                         <!--end menu1 Attandance -->
                         <!--new added menu1 Event -->
                         <!--<li class="nav-item">
@@ -311,7 +316,7 @@
                         <!--end menu1 Event -->
                         <!--new added menu1 Notify -->
                         <li class="nav-item">
-                            <a class="nav-link"  asp-controller="Complainview" asp-action="Index">
+                            <a class="nav-link" asp-controller="Complainview" asp-action="Index">
                                 <i class="menu-icon typcn typcn-th-large-outline"></i>
                                 <span class="menu-title">Complain</span>
                             </a>
@@ -319,11 +324,11 @@
                         <!--end menu1  Notify-->
                         <!--new added menu1 Transport -->
                         @*<li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="menu-icon typcn typcn-bell"></i>
-                                <span class="menu-title">Transport</span>
-                            </a>
-                        </li>*@
+                                <a class="nav-link" href="#">
+                                    <i class="menu-icon typcn typcn-bell"></i>
+                                    <span class="menu-title">Transport</span>
+                                </a>
+                            </li>*@
                         <!--end menu1 Transport -->
                         <!--new added menu1 Genneral Setting -->
                         <li class="nav-item">
@@ -396,9 +401,10 @@
         <script src="~/assets/js/demo_1/dashboard.js"></script>
 
     </div>
+    <script src="~/lib/jquery-datatables/js/jquery.dataTables.min.js"></script>
 </body>
 
-<script src="~/lib/jquery-datatables/js/jquery.dataTables.min.js"></script>
+
 
 </html>
 @RenderSection("Scripts", required: false)

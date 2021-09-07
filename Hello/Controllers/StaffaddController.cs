@@ -25,7 +25,9 @@ namespace Hello.Controllers
                 {
                     username = viewmodel.username,
                     password = viewmodel.password,
-                    role = "staff"
+                    email = viewmodel.email,
+                    role = "staff",
+                    course="null"
                 };
 
                 Staffregister register = new Staffregister()
@@ -33,7 +35,7 @@ namespace Hello.Controllers
                     firstname = viewmodel.firstname,
                     lastname = viewmodel.lastname,
                     bloodgroup = viewmodel.bloodgroup,
-                    dateofbirth = viewmodel.dateofbirth,
+                   
                     phoneno = viewmodel.phoneno,
                     gender = viewmodel.gender,
                     country = viewmodel.country,
@@ -44,7 +46,7 @@ namespace Hello.Controllers
                     streetname = viewmodel.streetname,
                     postalcode = viewmodel.postalcode,
                     email = viewmodel.email,
-                    joiningdate = viewmodel.joiningdate,
+                   
                     course = viewmodel.course,
                     staffcode = viewmodel.staffcode,
                     shift = viewmodel.shift
