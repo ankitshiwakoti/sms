@@ -24,6 +24,8 @@ namespace Hello.Controllers
         public IActionResult Loginaction(string username, string password)
         {
             var userlist = dal.userlogins.Where(X => X.username.Equals(username)).ToList();
+            var student = dal.Studentregisters.Count();
+
 
 
             if (userlist.Count() == 1 && userlist[0].password.Equals(password) && userlist[0].role.Equals("admin"))
@@ -32,12 +34,15 @@ namespace Hello.Controllers
                 //admin role
                 //setting session using HttpContext
                 HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0]));
+                HttpContext.Session.SetString("Student", JsonConvert.SerializeObject(student));
+                String studentnumber = student.ToString();
                 String email = userlist[0].email;
                 String name = userlist[0].username;
                 String role = userlist[0].role;
                 HttpContext.Session.SetString("email", email);
                 HttpContext.Session.SetString("name", name);
                 HttpContext.Session.SetString("role", role);
+                HttpContext.Session.SetString("student", studentnumber);
 
                 /*HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0])); //note argument should be in strings only.
                  HttpContext.Session.SetString("Logged", "true");
@@ -146,6 +151,13 @@ namespace Hello.Controllers
                 return RedirectToAction("Login", "Login");
                
             }
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.SetString("User", "null");
+            HttpContext.Session.SetString("Logged", "null");
+            return RedirectToAction("Login", "Login");
         }
     }
 }
