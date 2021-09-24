@@ -3,6 +3,53 @@
     Layout = "_Admin";
     @* ViewBag.data = ViewBag.d.name;*@
 }
+
+
+@section Scripts{
+    <script type="text/javascript">
+
+        function userValid() {
+
+            var Name = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var contactno = document.getElementById("contactno").value;
+            var username = document.getElementById("username").value;
+            var address = document.getElementById("address").value;
+            var password = document.getElementById("password").value;
+            var password1 = document.getElementById("password1").value;
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var phom = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+            
+
+            if (Name == "" || email == "" || contactno == "" || username == "" || address == "" || password == "" || password1 == "") {
+
+                alert("please fill all input field");
+                return false;
+
+            }
+            if (password != password1) {
+                alert("password should be same on both field ");
+                return false;
+
+            }
+            if (contactno.length != 10) {
+                alert("please enter the correct phone no ");
+                return false;
+
+            }
+             else if (email != "") {
+                if (!email.match(validRegex)) {
+                    alert("Invalid Email Id");
+                    return false;
+                }
+            } 
+            else {
+
+                return true;
+            }
+        }
+    </script>
+}
 <!-- partial -->
 
 <div class="main-panel">
@@ -31,7 +78,7 @@
 
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" name="email" class="form-control" placeholder="Email">
+                                        <input type="text" id="email" name="email" class="form-control" placeholder="Email">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -41,8 +88,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text"  name="fullname" class="form-control" placeholder="Fullname">
-                                       
+                                        <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Fullname">
+
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -52,7 +99,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" name="address" class="form-control" placeholder="Address">
+                                        <input type="text" id="address" name="address" class="form-control" placeholder="Address">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -62,7 +109,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" name="contactno" class="form-control" placeholder="Contactno">
+                                        <input type="number" id="contactno" name="contactno" class="form-control" placeholder="Contactno">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -72,7 +119,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" name="username" class="form-control" placeholder="Username">
+                                        <input type="text" id="username" name="username" class="form-control" placeholder="Username">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -82,7 +129,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password"  id="password1" class="form-control" placeholder="Password">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -92,7 +139,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Confirm Password">
+                                        <input type="password" id="password" name="password" class="form-control" placeholder="Confirm Password">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="mdi mdi-check-circle-outline"></i>
@@ -108,7 +155,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Register" class="btn btn-primary submit-btn btn-block" />
+                                    <input type="submit" onclick="return userValid(); " value="Register" class="btn btn-primary submit-btn btn-block" />
                                 </div>
 
                             </form>

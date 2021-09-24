@@ -6,12 +6,16 @@
 @section Scripts{
     <script type="text/javascript">
 
-    $(document).ready(function () {
-        $('#datatable').DataTable();
+        $(document).ready(function () {
+            $('#datatable').DataTable();
 
 
-    });
+        });
     </script>
+
+
+    
+    
 }
 
 
@@ -41,7 +45,7 @@
 
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="printableArea">
 
                     <table class="table table-bordered" id="datatable">
                         <thead>
@@ -79,33 +83,33 @@
 
                         </tbody>
                     </table>
-
+                    
 
                     @* <table class="table table-bordered" id="datatable">
-                    <thead>
-                        <tr>
-                            <th> ID </th>
-                            <th> Email </th>
-                            <th> Firstname </th>
-                            <th> Student Code </th>
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Email </th>
+                <th> Firstname </th>
+                <th> Student Code </th>
 
-                        </tr>
-                        @foreach (var data in ViewBag.d)
-                        {
+            </tr>
+            @foreach (var data in ViewBag.d)
+            {
 
-                        <td>@data.sid</td>
-                        <td>@data.email</td>
-                        <td>@data.firstname</td>
-                        <td>@data.studentcode</td>
-                        <td>
-                            <input type="submit" value="Update" class="btn btn-primary submit-btn btn-block" />&nbsp;
-                            <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />
-                        </td>
-                    }
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>*@
+            <td>@data.sid</td>
+            <td>@data.email</td>
+            <td>@data.firstname</td>
+            <td>@data.studentcode</td>
+            <td>
+                <input type="submit" value="Update" class="btn btn-primary submit-btn btn-block" />&nbsp;
+                <input type="submit" value="Delete" class="btn btn-primary submit-btn btn-block" />
+            </td>
+        }
+            </thead>
+            <tbody>
+            </tbody>
+        </table>*@
                 </div>
             </div>
         </div>

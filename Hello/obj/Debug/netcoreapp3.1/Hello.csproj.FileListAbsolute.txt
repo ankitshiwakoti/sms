@@ -104,3 +104,7 @@ C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Teac
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Teachernotice\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\Updateteacher\Index.cshtml.g.cs
 C:\Users\ankit\source\repos\Hello\Hello\obj\Debug\netcoreapp3.1\Razor\Views\changepassword\Index.cshtml.g.cs
+C:\Users\ankit\source\repos\Hello\Hello\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\ankit\source\repos\Hello\Hello\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\ankit\source\repos\Hello\Hello\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\ankit\source\repos\Hello\Hello\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll

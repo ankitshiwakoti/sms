@@ -23,8 +23,11 @@ namespace Hello.Controllers
         [HttpPost]
         public IActionResult Loginaction(string username, string password)
         {
-            var userlist = dal.userlogins.Where(X => X.username.Equals(username)).ToList();
+            var userlist = dal.userlogins.Where(X => X.username.Equals(username)).Where(X => X.password.Equals(password)).ToList();
             var student = dal.Studentregisters.Count();
+            var teacher = dal.Teacherregisters.Count();
+            var staff = dal.Staffregisters.Count();
+            var course1 = dal.Courseadds.Count();
 
 
 
@@ -34,16 +37,35 @@ namespace Hello.Controllers
                 //admin role
                 //setting session using HttpContext
                 HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0]));
-                HttpContext.Session.SetString("Student", JsonConvert.SerializeObject(student));
-                String studentnumber = student.ToString();
+               // HttpContext.Session.SetString("Student", JsonConvert.SerializeObject(student));
+               /// String studentnumber = student.ToString();
                 String email = userlist[0].email;
                 String name = userlist[0].username;
                 String role = userlist[0].role;
                 HttpContext.Session.SetString("email", email);
+
+                String course = userlist[0].course;
+                HttpContext.Session.SetString("course", course);
                 HttpContext.Session.SetString("name", name);
                 HttpContext.Session.SetString("role", role);
+                //  HttpContext.Session.SetString("student", studentnumber);
+
+                String id = userlist[0].uid.ToString();
+                HttpContext.Session.SetString("uid", id);
+
+                HttpContext.Session.SetString("password", password);
+
+                String studentnumber = student.ToString();
                 HttpContext.Session.SetString("student", studentnumber);
 
+                String teachernumber = teacher.ToString();
+                HttpContext.Session.SetString("teacher", teachernumber);
+
+                String staffnumber = staff.ToString();
+                HttpContext.Session.SetString("staff", staffnumber);
+
+                String coursenumber = course1.ToString();
+                HttpContext.Session.SetString("course1", coursenumber);
                 /*HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0])); //note argument should be in strings only.
                  HttpContext.Session.SetString("Logged", "true");
                  HttpContext.Session.SetString("course", userlist[0].course);
@@ -62,6 +84,26 @@ namespace Hello.Controllers
                 HttpContext.Session.SetString("role", role);
                 HttpContext.Session.SetString("email", email);
                 HttpContext.Session.SetString("name", name);
+
+                String course = userlist[0].course;
+                HttpContext.Session.SetString("course", course);
+
+                String studentnumber = student.ToString();
+                HttpContext.Session.SetString("student", studentnumber);
+
+                String teachernumber = teacher.ToString();
+                HttpContext.Session.SetString("teacher", teachernumber);
+
+                String staffnumber = staff.ToString();
+                HttpContext.Session.SetString("staff", staffnumber);
+
+                String coursenumber = course1.ToString();
+                HttpContext.Session.SetString("course1", coursenumber);
+
+                String id = userlist[0].uid.ToString();
+                HttpContext.Session.SetString("uid", id);
+
+                HttpContext.Session.SetString("password", password);
 
                 //  user_List.Count() == 1 && user_List[0].password.Equals(password) && user_List[0].role.Equals("admin") && user_List[0].status.Equals("Active"))
                 //admin role
@@ -95,6 +137,25 @@ namespace Hello.Controllers
                 HttpContext.Session.SetString("name", name);
                 String role = userlist[0].role;
                 HttpContext.Session.SetString("role", role);
+
+                
+
+                String studentnumber = student.ToString();
+                HttpContext.Session.SetString("student", studentnumber);
+
+                String teachernumber = teacher.ToString();
+                HttpContext.Session.SetString("teacher", teachernumber);
+
+                String staffnumber = staff.ToString();
+                HttpContext.Session.SetString("staff", staffnumber);
+
+                String coursenumber = course1.ToString();
+                HttpContext.Session.SetString("course1", coursenumber);
+
+                String id = userlist[0].uid.ToString();
+                HttpContext.Session.SetString("uid", id);
+
+                HttpContext.Session.SetString("password", password);
                 /* HttpContext.Session.SetString("User", JsonConvert.SerializeObject(userlist[0])); //note argument should be in strings only.
                  HttpContext.Session.SetString("Logged", "true");
                  HttpContext.Session.SetString("course", userlist[0].course);
@@ -118,6 +179,25 @@ namespace Hello.Controllers
                 HttpContext.Session.SetString("name", name);
                 String role = userlist[0].role;
                 HttpContext.Session.SetString("role", role);
+
+                
+
+                String studentnumber = student.ToString();
+                HttpContext.Session.SetString("student", studentnumber);
+
+                String teachernumber = teacher.ToString();
+                HttpContext.Session.SetString("teacher", teachernumber);
+
+                String staffnumber = staff.ToString();
+                HttpContext.Session.SetString("staff", staffnumber);
+
+                String coursenumber = course1.ToString();
+                HttpContext.Session.SetString("course1", coursenumber);
+
+                String id = userlist[0].uid.ToString();
+                HttpContext.Session.SetString("uid", id);
+
+                HttpContext.Session.SetString("password", password);
                 // HttpContext.Session.SetString("password",password);
                 return RedirectToAction("Index", "Student");
                // return Redirect("/Student/Index");
@@ -134,6 +214,23 @@ namespace Hello.Controllers
                 HttpContext.Session.SetString("name", name);
                 String role = userlist[0].role;
                 HttpContext.Session.SetString("role", role);
+
+                String studentnumber = student.ToString();
+                HttpContext.Session.SetString("student", studentnumber);
+
+                String teachernumber = teacher.ToString();
+                HttpContext.Session.SetString("teacher", teachernumber);
+
+                String staffnumber = staff.ToString();
+                HttpContext.Session.SetString("staff", staffnumber);
+
+                String coursenumber = course1.ToString();
+                HttpContext.Session.SetString("course1", coursenumber);
+
+                String id = userlist[0].uid.ToString();
+                HttpContext.Session.SetString("uid", id);
+
+                HttpContext.Session.SetString("password", password);
                 //  user_List.Count() == 1 && user_List[0].password.Equals(password) && user_List[0].role.Equals("admin") && user_List[0].status.Equals("Active"))
                 //admin role
                 //setting session using HttpContext

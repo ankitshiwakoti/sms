@@ -70,7 +70,8 @@
                             <div class="col-lg-3 col-md-6">
                                 <div class="d-flex">
                                     <div class="wrapper">
-                                        <h3 class="mb-0 font-weight-semibold">1800</h3>
+                                        @{var student = Context.Session.GetString("student"); }
+                                        <h3 class="mb-0 font-weight-semibold">@student</h3>
                                         <h5 class="mb-0 font-weight-medium text-primary">Students</h5>
                                         <p class="mb-0 text-muted">+14(new)</p>
                                     </div>
@@ -79,11 +80,11 @@
                                     </div>
                                 </div>
                             </div>
-                            @{var student = Context.Session.GetString("student"); }
+                            @{var teacher = Context.Session.GetString("teacher"); }
                             <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
                                 <div class="d-flex">
                                     <div class="wrapper">
-                                        <h3 class="mb-0 font-weight-semibold">@student</h3>
+                                        <h3 class="mb-0 font-weight-semibold">@teacher</h3>
                                         <h5 class="mb-0 font-weight-medium text-primary">Teacher</h5>
                                         <p class="mb-0 text-muted">+13(new)</p>
                                     </div>
@@ -95,7 +96,8 @@
                             <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
                                 <div class="d-flex">
                                     <div class="wrapper">
-                                        <h3 class="mb-0 font-weight-semibold">100</h3>
+                                        @{var staff = Context.Session.GetString("staff"); }
+                                        <h3 class="mb-0 font-weight-semibold">@staff</h3>
                                         <h5 class="mb-0 font-weight-medium text-primary">Staff</h5>
                                         <p class="mb-0 text-muted">+57(new)</p>
                                     </div>
@@ -106,9 +108,10 @@
                             </div>
                             <div class="col-lg-3 col-md-6 mt-md-0 mt-4">
                                 <div class="d-flex">
+                                    @{var course = Context.Session.GetString("course1"); }
                                     <div class="wrapper">
-                                        <h3 class="mb-0 font-weight-semibold">120</h3>
-                                        <h5 class="mb-0 font-weight-medium text-primary">Classes</h5>
+                                        <h3 class="mb-0 font-weight-semibold">@course</h3>
+                                        <h5 class="mb-0 font-weight-medium text-primary">Courses</h5>
                                         <p class="mb-0 text-muted">+13(new)</p>
                                     </div>
                                     <div class="wrapper my-auto ml-auto ml-lg-4">

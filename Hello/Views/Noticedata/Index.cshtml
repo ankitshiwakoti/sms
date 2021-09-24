@@ -4,12 +4,14 @@
 
 
 
+
+
 <div class="main-panel">
     <div class="content-wrapper">
 
 
 
-        <div class="row">
+        <div class="row" id="printableArea">
 
             <div class="col-12 grid-margin">
                 <div class="card">
@@ -23,7 +25,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label"> Notice Id </label>
-                                        <textarea  readonly class="form-control" id="aid" rows="1" cols="1">@ViewBag.da.nid </textarea>
+                                        <textarea readonly class="form-control" id="aid" rows="1" cols="1">@ViewBag.da.nid </textarea>
 
                                     </div>
                                 </div>
@@ -49,12 +51,14 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group row">
-                                        <label class="col-sm-3 col-form-label" >Notice </label>
+                                        <label class="col-sm-3 col-form-label">Notice </label>
                                         <textarea readonly class="form-control" id="publisher" rows="1" cols="1">@ViewBag.da.notice </textarea>
 
                                     </div>
                                 </div>
                             </div>
+
+                            
                         </form>
                     </div>
                 </div>

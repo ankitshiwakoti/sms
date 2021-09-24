@@ -19,6 +19,7 @@ namespace Hello.Controllers
 
         public IActionResult delete(int aid)
         {
+           
             var data = dal.Administratorregisters.Find(aid);
             dal.Administratorregisters.Remove(data);
             dal.SaveChanges();

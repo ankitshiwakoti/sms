@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
+using System.Net.Sockets;
 using System.Threading.Tasks;
 using Hello.Models;
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 
 namespace Hello.Controllers
 {
@@ -23,6 +27,8 @@ namespace Hello.Controllers
         {
             try
             {
+               
+
                 userlogin login = new userlogin()
                 {
                     username = viewmodel.username,
@@ -61,11 +67,47 @@ namespace Hello.Controllers
                 dal.Studentregisters.Add(register);
                 dal.SaveChanges();
 
+                MimeMessage message = new MimeMessage();
+                SmtpClient client = new SmtpClient();
+                //sender
+                message.From.Add(new MailboxAddress("SIMS", "studentinformation121@gmail.com"));
+                //receiver
+                message.To.Add(MailboxAddress.Parse(viewmodel.email));
+                //subject of message
+                message.Subject = "Account Information";
+                //creating message
+                var id = viewmodel.username;
+                var pas = viewmodel.password;
+                string text = "your id is   =" + id + "pass is   =" + pas + "      thank you";
+                message.Body = new TextPart("plain")
+                {
+                    Text = text
+
+                };
+
+
+
+
+                //connect with smtp of gmail port:465
+                client.Connect("smtp.gmail.com", 465, true);
+                //email-id , password
+                client.Authenticate("studentinformation121@gmail.com", "hello33shiw1");
+                //send mail
+                client.Send(message);
+                //closure-------------
+                //disconnect client
+                client.Disconnect(true);
+                //dispose client
+                client.Dispose();
+
+                //mail code end
+                //mailing
+
 
             }
-            catch (Exception e)
+            catch (SocketException ex)
             {
-                Console.WriteLine(e);
+                Console.WriteLine(ex);
 
             }
             return Redirect("/Studentadd/Index");

@@ -124,7 +124,7 @@ namespace Hello.Controllers
                // dal.SaveChanges();
             }
 
-            return RedirectToAction("Studentbulk", "Studentbulk");
+            return RedirectToAction("Index", "Studentadd");
            
 
         }
